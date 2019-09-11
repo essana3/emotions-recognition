@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Emotions Recognition</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    #chart {
+      z-index: 2;
+      position: absolute;
+      width: 700px !important;
+      height: 350px !important;
+      visibility: hidden;
+    }
+
+    button, input {
+      top: 730px;
+    }
+
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script defer src="work_final.js"></script>
+</head>
+
+<body>
+  <video  class="absolute" preload="metadata"></video>
+  <canvas class="absolute"></canvas>
+  <button class="absolute" onclick="video.play()">PLAY</button>
+  <button class="absolute" onclick="video.pause()" style="left: 100px">PAUSE</button>
+  <canvas id="chart"></canvas>
+  <input class="absolute" id="seek" type="number" style="left: 200px">
+  <button
+    class="absolute"
+    onclick="video.currentTime = time.value / 30"
+    style="left: 300px"
+  >CHANGE</button>
+</body>
+</html>
